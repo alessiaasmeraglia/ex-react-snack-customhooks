@@ -65,3 +65,12 @@ button {
 button:hover {
   background-color: #1d4ed8;
 }
+
+.key {
+  color: #64748b;
+  font-weight: bold;
+}
+
+.key.pressed {
+  color: #16a34a;
+}

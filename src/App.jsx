@@ -1,11 +1,14 @@
 import useCustomPointer from "./hooks/useCustomPointer";
 import useDate from "./hooks/useDate";
 import useSwitch from "./hooks/useSwitch";
+import useKeyPress from './hooks/useKeyPress';
 
 function App() {
   const [isOn, toggle] = useSwitch();
   const currentDate = useDate();
   const customPointer = useCustomPointer('🔥');
+  const isEnterPressed = useKeyPress('Enter');
+  const isEscapePressed = useKeyPress('Escape');
 
   return (
     <main className="container">
@@ -36,6 +39,22 @@ function App() {
 
         <p>
           Muovi il mouse per vedere il cursore personalizzato.
+        </p>
+      </section>
+
+      <section className="card">
+        <h1>Bonus: useKeyPress</h1>
+
+        <p className={isEnterPressed ? 'key pressed' : 'key'}>
+          {isEnterPressed
+            ? 'Enter premuto! ✅'
+            : 'Tieni premuto Enter'}
+        </p>
+
+        <p className={isEscapePressed ? 'key pressed' : 'key'}>
+          {isEscapePressed
+            ? 'Escape premuto! ✅'
+            : 'Escape non premuto'}
         </p>
       </section>
     </main>
