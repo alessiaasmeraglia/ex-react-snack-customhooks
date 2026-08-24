@@ -18,8 +18,9 @@ body {
   padding: 2rem;
 }
 
-h1 {
-  margin: 0;
+.card h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
 }
 
 .status {
@@ -34,6 +35,10 @@ h1 {
 
 .status.off {
   color: #dc2626;
+}
+
+.date {
+  font-size: 1.2rem;
 }
 
 button {
