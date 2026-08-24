@@ -1,12 +1,15 @@
-import useSwitch from "./hooks/useSwitch";
+import useCustomPointer from "./hooks/useCustomPointer";
 import useDate from "./hooks/useDate";
+import useSwitch from "./hooks/useSwitch";
 
 function App() {
   const [isOn, toggle] = useSwitch();
   const currentDate = useDate();
+  const customPointer = useCustomPointer('🔥');
 
   return (
     <main className="container">
+      {customPointer}
 
       <section className="card">
         <h1>Snack 1: useSwitch</h1>
@@ -25,6 +28,14 @@ function App() {
 
         <p className="date">
           {currentDate.toLocaleString('it-IT')}
+        </p>
+      </section>
+
+      <section className="card">
+        <h1>Snack 3: useCustomPointer</h1>
+
+        <p>
+          Muovi il mouse per vedere il cursore personalizzato.
         </p>
       </section>
     </main>
